@@ -2,7 +2,7 @@ FROM nnurphy/deb
 
 ENV STACK_ROOT=/opt/stack \
     HOME=/root \
-    STACKAGE_VERSION=lts-13.28
+    STACKAGE_VERSION=lts-13.29
 
 RUN set -ex \
   ; apt-get update \
