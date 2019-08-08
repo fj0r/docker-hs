@@ -2,9 +2,11 @@ FROM nnurphy/deb
 
 ENV STACK_ROOT=/opt/stack \
     HOME=/root \
-    STACKAGE_VERSION=lts-13.30
+    STACKAGE_VERSION=lts-14.0
 
 RUN set -ex \
+  ; cp /etc/apt/sources.list /etc/apt/sources.list.tuna \
+  ; sed -i 's!https://mirrors.tuna.tsinghua.edu.cn!http://deb.debian.org!g' /etc/apt/sources.list \
   ; apt-get update \
   ; apt-get install -y --no-install-recommends \
         libffi-dev libgmp-dev zlib1g-dev gnupg \
