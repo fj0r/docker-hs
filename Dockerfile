@@ -18,18 +18,19 @@ RUN set -ex \
   ; curl -sSL https://get.haskellstack.org/ | sh \
   ; stack config set system-ghc --global false && stack config set install-ghc --global true  \
   ; stack update && stack setup \
+  # JuicyPixels xhtml criterion weigh alex happy
   ; stack install \
       hlint hindent highlight ghcid clock hashtables dlist binary store parsers megaparsec Earley \
-      optparse-applicative shelly boomerang aeson yaml taggy cassava JuicyPixels diagrams \
+      optparse-applicative shelly boomerang aeson yaml taggy cassava diagrams \
       persistent mwc-random shake TCache MonadRandom monad-logger monad-journal \
       pipes conduit machines mustache cryptonite http-conduit wreq servant scotty wai \
-      websockets warp smallcheck hspec extensible-exceptions criterion weigh deepseq \
+      websockets warp smallcheck hspec extensible-exceptions deepseq \
       filepath directory hpc pretty process arithmoi hmatrix linear statistics ad integration \
       monad-par async stm classy-prelude reactive-banana uniplate singletons dimensional \
       free extensible-effects freer bound unbound-generics ghc-prim primitive memory array \
-      bytestring containers template-haskell time transformers unix alex happy attoparsec fgl mtl \
+      bytestring containers template-haskell time transformers unix attoparsec fgl mtl \
       network QuickCheck parallel random call-stack regex-base regex-compat regex-posix syb \
-      text hashable unordered-containers vector zlib multipart HTTP fixed html xhtml \
+      text hashable unordered-containers vector zlib multipart HTTP fixed html \
       transformers-compat network-uri flow lens \
   ; mkdir -p ${STACK_ROOT}/global-project \
   # 设置全局 stack resolver, 避免运行时重新安装 lts
