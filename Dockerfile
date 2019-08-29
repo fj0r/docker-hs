@@ -36,7 +36,7 @@ RUN set -ex \
   # 设置全局 stack resolver, 避免运行时重新安装 lts
   #; sed -i "s/^\(resolver:\).*$/\1 ${STACKAGE_VERSION}/g" ${STACK_ROOT}/global-project/stack.yaml \
   ; rm -rf ${STACK_ROOT}/programs/x86_64-linux/*.tar.xz \
-  ; rm -rf ${STACK_ROOT}/pantry/hackage/* \
-  ; stack install flow
+  ; rm -rf ${STACK_ROOT}/pantry/hackage/*
+  #; stack install flow
 
 COPY .ghci ${HOME}/.ghci
