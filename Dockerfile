@@ -2,7 +2,7 @@ FROM nnurphy/deb
 
 ENV STACK_ROOT=/opt/stack \
     HOME=/root \
-    STACKAGE_VERSION=lts-14.6
+    STACKAGE_VERSION=lts-14.7
 
 RUN set -ex \
   ; apt-get update \
@@ -13,8 +13,6 @@ RUN set -ex \
 
 RUN set -ex \
   ; mkdir -p ${STACK_ROOT} && mkdir -p ${HOME}/.cabal \
-#  ; scp up:~/pub/Configuration/stack/config.yaml ${STACK_ROOT}/config.yaml \
-#  ; scp up:~/pub/Configuration/stack/config ${HOME}/.cabal/config \
   ; curl -sSL https://get.haskellstack.org/ | sh \
   ; stack config set system-ghc --global false && stack config set install-ghc --global true  \
   ; stack update && stack setup \
@@ -39,4 +37,5 @@ RUN set -ex \
   ; rm -rf ${STACK_ROOT}/pantry/hackage/* \
   ; stack install flow
 
+COPY config.tuna.yaml ${STACK_ROOT}
 COPY .ghci ${HOME}/.ghci
