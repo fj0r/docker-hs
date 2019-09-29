@@ -1,8 +1,7 @@
 FROM nnurphy/deb
 
-ENV STACK_ROOT=/opt/stack \
-    HOME=/root \
-    STACKAGE_VERSION=lts-14.7
+ENV STACK_ROOT=/opt/stack STACKAGE_VERSION=lts-14.7
+ENV PATH=${HOME}/.local/bin:$PATH
 
 RUN set -ex \
   ; apt-get update \
