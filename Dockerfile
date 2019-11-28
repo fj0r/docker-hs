@@ -1,6 +1,6 @@
 FROM nnurphy/deb
 
-ENV STACK_ROOT=/opt/stack STACKAGE_VERSION=lts-14.15
+ENV STACK_ROOT=/opt/stack STACKAGE_VERSION=lts-14.16
 ENV PATH=${HOME}/.local/bin:$PATH
 
 RUN set -ex \
@@ -37,4 +37,4 @@ RUN set -ex \
   ; stack install flow
 
 COPY config.tuna.yaml ${STACK_ROOT}
-COPY .ghci ${HOME}/.ghci
+COPY .ghci ${HOME}/
