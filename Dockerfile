@@ -37,4 +37,4 @@ RUN set -ex \
   ; stack install flow
 
 COPY config.tuna.yaml ${STACK_ROOT}
-COPY ./.ghci ${HOME}/
+COPY ghci ${HOME}/.ghci
