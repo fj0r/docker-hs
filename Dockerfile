@@ -1,6 +1,6 @@
 FROM nnurphy/deb
 
-ENV STACK_ROOT=/opt/stack STACKAGE_VERSION=lts-14.25
+ENV STACK_ROOT=/opt/stack STACKAGE_VERSION=lts-15.0
 ENV PATH=${HOME}/.local/bin:$PATH
 
 RUN set -ex \
