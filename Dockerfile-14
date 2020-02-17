@@ -1,6 +1,6 @@
 FROM nnurphy/deb
 
-ENV STACK_ROOT=/opt/stack STACKAGE_VERSION=lts-15.0
+ENV STACK_ROOT=/opt/stack STACKAGE_VERSION=lts-14.27
 ENV PATH=${HOME}/.local/bin:$PATH
 
 RUN set -ex \
@@ -23,7 +23,7 @@ RUN set -ex \
       pipes conduit machines mustache cryptonite http-conduit wreq servant scotty wai \
       websockets warp smallcheck hspec extensible-exceptions deepseq \
       filepath directory hpc pretty process arithmoi hmatrix linear statistics ad integration \
-      monad-par async stm classy-prelude uniplate singletons dimensional \
+      monad-par async stm classy-prelude reactive-banana uniplate singletons dimensional \
       free extensible-effects freer bound unbound-generics ghc-prim primitive memory array \
       bytestring containers template-haskell time transformers unix attoparsec fgl mtl \
       network QuickCheck parallel random call-stack regex-base regex-compat regex-posix syb \
