@@ -38,5 +38,4 @@ RUN set -ex \
 
 COPY .ghci $HOME
 
-WORKDIR $HOME
 RUN stack new hello
