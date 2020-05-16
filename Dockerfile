@@ -34,8 +34,7 @@ RUN set -ex \
   #; sed -i "s/^\(resolver:\).*$/\1 ${STACKAGE_VERSION}/g" ${STACK_ROOT}/global-project/stack.yaml \
   ; rm -rf ${STACK_ROOT}/programs/x86_64-linux/*.tar.xz \
   ; rm -rf ${STACK_ROOT}/pantry/hackage/* \
-  ; stack install flow
+  ; stack install flow \
+  ; stack new hello && rm -rf hello
 
 COPY .ghci $HOME
-
-RUN stack new hello
