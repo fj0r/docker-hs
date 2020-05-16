@@ -36,5 +36,7 @@ RUN set -ex \
   ; rm -rf ${STACK_ROOT}/pantry/hackage/* \
   ; stack install flow
 
-COPY config.tuna.yaml ${STACK_ROOT}
 COPY .ghci $HOME
+
+WORKDIR $HOME
+RUN stack new hello
