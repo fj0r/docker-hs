@@ -1,6 +1,6 @@
 FROM nnurphy/ub
 
-ENV STACK_ROOT=/opt/stack STACKAGE_VERSION=lts-15.12
+ENV STACK_ROOT=/opt/stack STACKAGE_VERSION=lts-15.13
 ENV PATH=${HOME}/.local/bin:$PATH
 
 RUN set -ex \
