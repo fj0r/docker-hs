@@ -38,3 +38,4 @@ RUN set -ex \
   ; stack new hello && rm -rf hello
 
 COPY .ghci $HOME
+COPY config.tuna.yaml /opt/stack/config.yaml
