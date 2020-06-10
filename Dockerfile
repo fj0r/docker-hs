@@ -18,7 +18,8 @@ RUN set -ex \
   ; stack update && stack setup \
   # JuicyPixels xhtml criterion weigh alex happy
   ; stack install \
-      hlint highlight ghcid clock hashtables dlist binary parsers megaparsec Earley \
+      haskell-dap ghci-dap haskell-debug-adapter ghcid \
+      hlint highlight clock hashtables dlist binary parsers megaparsec Earley \
       optparse-applicative shelly boomerang aeson yaml taggy cassava diagrams \
       persistent mwc-random shake TCache MonadRandom monad-logger monad-journal \
       pipes conduit machines mustache cryptonite http-conduit wreq servant scotty wai \
