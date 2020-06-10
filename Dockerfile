@@ -27,7 +27,7 @@ RUN set -ex \
       monad-par async stm classy-prelude uniplate singletons dimensional \
       free extensible-effects freer bound unbound-generics ghc-prim primitive memory array \
       bytestring containers template-haskell time transformers unix attoparsec fgl mtl \
-      network QuickCheck parallel random call-stack regex-base regex-compat regex-posix syb \
+      network QuickCheck parallel random call-stack regex-base regex-posix syb \
       text hashable unordered-containers vector zlib multipart HTTP fixed html \
       transformers-compat network-uri flow lens recursion-schemes \
   ; mkdir -p ${STACK_ROOT}/global-project \
