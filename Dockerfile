@@ -16,7 +16,7 @@ RUN set -ex \
   ; curl -sSL https://get.haskellstack.org/ | sh \
   ; stack config set system-ghc --global false && stack config set install-ghc --global true  \
   ; stack update && stack setup \
-  # JuicyPixels xhtml criterion weigh alex happy
+  # JuicyPixels xhtml criterion weigh alex happy regex-compat
   ; stack install \
       haskell-dap ghci-dap haskell-debug-adapter ghcid \
       hlint highlight clock hashtables dlist binary parsers megaparsec Earley \
