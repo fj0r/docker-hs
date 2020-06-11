@@ -20,7 +20,7 @@ RUN set -ex \
   ; stack config set system-ghc --global false && stack config set install-ghc --global true  \
   ; stack update && stack setup \
   # JuicyPixels xhtml criterion weigh alex happy regex-compat
-  ; stack install \
+  ; stack install --no-interleaved-output \
       haskell-dap ghci-dap haskell-debug-adapter ghcid \
       hlint highlight clock hashtables dlist binary parsers megaparsec Earley \
       optparse-applicative shelly boomerang aeson yaml taggy cassava diagrams \
