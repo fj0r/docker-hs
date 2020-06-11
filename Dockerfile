@@ -19,7 +19,7 @@ RUN set -ex \
   ; curl -sSL https://get.haskellstack.org/ | sh \
   ; stack config set system-ghc --global false && stack config set install-ghc --global true  \
   ; stack update && stack setup \
-  # JuicyPixels xhtml criterion weigh alex happy regex-compat
+  # JuicyPixels xhtml criterion weigh alex happy regex-compat regex-base regex-posix
   ; stack install --no-interleaved-output \
       haskell-dap ghci-dap haskell-debug-adapter ghcid \
       hlint highlight clock hashtables dlist binary parsers megaparsec Earley \
@@ -31,7 +31,7 @@ RUN set -ex \
       monad-par async stm classy-prelude uniplate singletons dimensional \
       free extensible-effects freer bound unbound-generics ghc-prim primitive memory array \
       bytestring containers template-haskell time transformers unix attoparsec fgl mtl \
-      network QuickCheck parallel random call-stack regex-base regex-posix syb \
+      network QuickCheck parallel random call-stack syb \
       text hashable unordered-containers vector zlib multipart HTTP fixed html \
       transformers-compat network-uri flow lens recursion-schemes \
   ; mkdir -p ${STACK_ROOT}/global-project \
