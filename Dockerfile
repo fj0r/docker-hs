@@ -21,7 +21,7 @@ RUN set -ex \
   ; stack update && stack setup \
   # JuicyPixels xhtml criterion weigh alex happy ghc-prim multipart
   # regex-compat regex-base regex-posix random primitive arithmoi
-  # warp cassava diagrams \
+  # monad-par warp cassava diagrams \
   ; stack install --no-interleaved-output \
       haskell-dap ghci-dap haskell-debug-adapter \
       ghcid hlint highlight \
@@ -41,7 +41,7 @@ RUN set -ex \
       deepseq call-stack \
       clock filepath directory hpc pretty process time unix \
       hmatrix linear statistics ad integration \
-      parallel monad-par async stm classy-prelude \
+      parallel async stm classy-prelude \
       syb uniplate singletons dimensional \
       free extensible-effects extensible-exceptions freer \
       bound unbound-generics memory array \
