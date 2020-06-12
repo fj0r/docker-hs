@@ -19,21 +19,33 @@ RUN set -ex \
   ; curl -sSL https://get.haskellstack.org/ | sh \
   ; stack config set system-ghc --global false && stack config set install-ghc --global true  \
   ; stack update && stack setup \
-  # JuicyPixels xhtml criterion weigh alex happy regex-compat regex-base regex-posix random
+  # JuicyPixels xhtml criterion weigh alex happy ghc-prim multipart
+  # regex-compat regex-base regex-posix random primitive arithmoi
+  # warp cassava diagrams \
   ; stack install --no-interleaved-output \
-      haskell-dap ghci-dap haskell-debug-adapter ghcid \
-      hlint highlight clock hashtables dlist binary parsers megaparsec Earley \
-      optparse-applicative shelly boomerang aeson yaml taggy cassava diagrams \
-      persistent mwc-random shake TCache MonadRandom monad-logger monad-journal \
-      pipes conduit machines mustache cryptonite http-conduit wreq servant scotty wai \
-      websockets warp smallcheck hspec extensible-exceptions deepseq \
-      filepath directory hpc pretty process arithmoi hmatrix linear statistics ad integration \
-      monad-par async stm classy-prelude uniplate singletons dimensional \
-      free extensible-effects freer bound unbound-generics ghc-prim primitive memory array \
-      bytestring containers template-haskell time transformers unix attoparsec fgl mtl \
-      network QuickCheck parallel call-stack syb \
-      text hashable unordered-containers vector zlib multipart HTTP fixed html \
-      transformers-compat network-uri flow lens recursion-schemes \
+      haskell-dap ghci-dap haskell-debug-adapter \
+      ghcid hlint highlight \
+      hashtables dlist binary bytestring containers text \
+      hashable unordered-containers vector \
+      parsers megaparsec Earley boomerang \
+      optparse-applicative shelly \
+      template-haskell aeson yaml taggy mustache persistent \
+      flow lens recursion-schemes fixed mtl fgl \
+      mwc-random MonadRandom \
+      monad-logger monad-journal \
+      pipes conduit machines \
+      cryptonite zlib \
+      http-conduit wreq HTTP html websockets \
+      servant scotty wai network network-uri \
+      QuickCheck smallcheck hspec \
+      deepseq call-stack \
+      clock filepath directory hpc pretty process time unix \
+      hmatrix linear statistics ad integration \
+      parallel monad-par async stm classy-prelude \
+      syb uniplate singletons dimensional \
+      free extensible-effects extensible-exceptions freer \
+      bound unbound-generics memory array \
+      transformers transformers-compat \
   ; mkdir -p ${STACK_ROOT}/global-project \
   # 设置全局 stack resolver, 避免运行时重新安装 lts
   #; sed -i "s/^\(resolver:\).*$/\1 ${STACKAGE_VERSION}/g" ${STACK_ROOT}/global-project/stack.yaml \
