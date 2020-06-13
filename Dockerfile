@@ -21,7 +21,6 @@ RUN set -ex \
   ; stack update && stack setup \
   # JuicyPixels xhtml criterion weigh alex happy
   # cassava diagrams \
-  # monad-par \
   # hmatrix linear statistics ad integration arithmoi \
   # regex-base regex-posix regex-compat \
   ; stack install --no-interleaved-output \
@@ -39,7 +38,8 @@ RUN set -ex \
       bound unbound-generics \
       transformers transformers-compat \
       syb uniplate singletons dimensional \
-      parallel async stm classy-prelude \
+  ; stack install --no-interleaved-output \
+      monad-par parallel async stm classy-prelude \
       persistent memory cryptonite \
       mwc-random MonadRandom random \
       monad-logger monad-journal \
