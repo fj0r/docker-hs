@@ -23,6 +23,7 @@ RUN set -ex \
   # cassava diagrams \
   # hmatrix linear statistics ad integration arithmoi \
   # regex-base regex-posix regex-compat \
+  # monad-par
   ; stack install --no-interleaved-output \
       ghcid hlint highlight \
       haskell-dap ghci-dap haskell-debug-adapter \
@@ -39,7 +40,7 @@ RUN set -ex \
       transformers transformers-compat \
       syb uniplate singletons dimensional \
   ; stack install --no-interleaved-output \
-      monad-par parallel async stm classy-prelude \
+      parallel async stm classy-prelude \
       persistent memory cryptonite \
       mwc-random MonadRandom random \
       monad-logger monad-journal \
