@@ -21,7 +21,8 @@ RUN set -ex \
   ; stack update && stack setup \
   # JuicyPixels xhtml criterion weigh alex happy ghc-prim multipart
   # regex-compat regex-base regex-posix random primitive arithmoi
-  # monad-par warp cassava diagrams \
+  # warp cassava diagrams \
+  # monad-par cryptonite \
   ; stack install --no-interleaved-output \
       haskell-dap ghci-dap haskell-debug-adapter \
       ghcid hlint highlight \
@@ -34,12 +35,11 @@ RUN set -ex \
       mwc-random MonadRandom \
       monad-logger monad-journal \
       pipes conduit machines \
-      cryptonite zlib \
       http-conduit wreq HTTP html websockets \
       servant scotty wai network network-uri \
       QuickCheck smallcheck hspec \
       deepseq call-stack \
-      clock filepath directory hpc pretty process time unix \
+      clock filepath directory hpc pretty process time unix zlib \
       hmatrix linear statistics ad integration \
       parallel async stm classy-prelude \
       syb uniplate singletons dimensional \
