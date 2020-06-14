@@ -21,9 +21,8 @@ RUN set -ex \
   ; stack update && stack setup \
   # JuicyPixels xhtml criterion weigh alex happy
   # cassava diagrams \
-  # hmatrix linear statistics ad integration arithmoi \
   # regex-base regex-posix regex-compat \
-  # transformers-compat monad-par
+  # transformers-compat
   ; stack install -j1 --no-interleaved-output \
       ghcid hlint highlight \
       haskell-dap ghci-dap haskell-debug-adapter \
@@ -38,7 +37,7 @@ RUN set -ex \
       free extensible-effects extensible-exceptions freer \
       bound unbound-generics transformers \
       syb uniplate singletons dimensional \
-      parallel async stm classy-prelude \
+      monad-par parallel async stm classy-prelude \
       persistent memory cryptonite \
       mwc-random MonadRandom random \
       monad-logger monad-journal \
@@ -46,6 +45,7 @@ RUN set -ex \
       http-conduit wreq HTTP html websockets multipart\
       servant scotty wai network network-uri warp \
       QuickCheck smallcheck hspec \
+      hmatrix linear statistics ad integration arithmoi \
   ; mkdir -p ${STACK_ROOT}/global-project \
   # 设置全局 stack resolver, 避免运行时重新安装 lts
   #; sed -i "s/^\(resolver:\).*$/\1 ${STACKAGE_VERSION}/g" ${STACK_ROOT}/global-project/stack.yaml \
