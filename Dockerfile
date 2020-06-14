@@ -24,7 +24,7 @@ RUN set -ex \
   # hmatrix linear statistics ad integration arithmoi \
   # regex-base regex-posix regex-compat \
   # transformers-compat monad-par
-  ; stack install --no-interleaved-output \
+  ; stack install -j1 --no-interleaved-output \
       ghcid hlint highlight \
       haskell-dap ghci-dap haskell-debug-adapter \
       optparse-applicative shelly process unix \
