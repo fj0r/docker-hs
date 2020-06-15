@@ -21,8 +21,6 @@ RUN set -ex \
   ; stack update && stack setup \
   # JuicyPixels xhtml criterion weigh alex happy
   # cassava diagrams \
-  # regex-base regex-posix regex-compat \
-  # transformers-compat
   ; stack install -j1 --no-interleaved-output \
       ghcid hlint highlight \
       haskell-dap ghci-dap haskell-debug-adapter \
@@ -35,12 +33,13 @@ RUN set -ex \
       flow lens recursion-schemes fixed mtl fgl \
       parsers megaparsec Earley boomerang \
       free extensible-effects extensible-exceptions freer \
-      bound unbound-generics transformers \
+      bound unbound-generics transformers transformers-compat \
       syb uniplate singletons dimensional \
       monad-par parallel async stm classy-prelude \
       persistent memory cryptonite \
       mwc-random MonadRandom random \
       monad-logger monad-journal \
+      regex-base regex-posix regex-compat \
       pipes conduit machines \
       http-conduit wreq HTTP html websockets multipart\
       servant scotty wai network network-uri warp \
