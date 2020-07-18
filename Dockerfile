@@ -1,6 +1,6 @@
 FROM nnurphy/ub
 
-ENV STACKAGE_VERSION=lts-16.4
+ENV STACKAGE_VERSION=lts-16.5
 ENV STACK_ROOT=/opt/stack
 ENV PATH=${HOME}/.local/bin:$PATH
 
@@ -54,4 +54,4 @@ RUN set -ex \
   ; stack new hello && rm -rf hello
 
 COPY .ghci $HOME
-COPY config.tuna.yaml /opt/stack/config.yaml
+COPY config.tuna.yaml /opt/stack/config.tuna.yaml
