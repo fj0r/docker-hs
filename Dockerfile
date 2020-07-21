@@ -45,7 +45,7 @@ RUN set -ex \
       servant scotty wai network network-uri warp \
       QuickCheck smallcheck hspec \
       hmatrix linear statistics ad integration arithmoi \
-  ; mkdir -p ${STACK_ROOT}/global-project \
+  #; mkdir -p ${STACK_ROOT}/global-project \
   # 设置全局 stack resolver, 避免运行时重新安装 lts
   #; sed -i "s/^\(resolver:\).*$/\1 ${STACKAGE_VERSION}/g" ${STACK_ROOT}/global-project/stack.yaml \
   ; rm -rf ${STACK_ROOT}/programs/x86_64-linux/*.tar.xz \
