@@ -1,6 +1,6 @@
 FROM nnurphy/ub
 
-ENV STACKAGE_VERSION=lts-16.25
+ENV STACKAGE_VERSION=lts-16.26
 ENV STACK_ROOT=/opt/stack
 ENV PATH=${HOME}/.local/bin:$PATH
 
