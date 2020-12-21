@@ -54,5 +54,12 @@ RUN set -ex \
   ; stack install flow \
   ; stack new hello && rm -rf hello
 
+RUN set -ex \
+  ; hls_version=$(curl -sSL -H "Accept: application/vnd.github.v3+json"  https://api.github.com/repos/haskell/haskell-language-server/releases | yq e '.[0].tag_name' -) \
+  ; ghc_version=$(stack ghc -- --version | grep -oP 'version \K([0-9\.]+)') \
+  ; curl -sSL https://github.com/haskell/haskell-language-server/releases/download/${hls_version}/haskell-language-server-wrapper-Linux.gz | gzip -d > /usr/local/bin/haskell-language-server-wrapper \
+  ; curl -sSL https://github.com/haskell/haskell-language-server/releases/download/${hls_version}/haskell-language-server-Linux-${ghc_version}.gz | gzip -d > /usr/local/bin/haskell-language-server-${ghc_version} \
+  ; chmod +x /usr/local/bin/haskell-language-server-*
+
 COPY .ghci $HOME
 COPY config.tuna.yaml /opt/stack/config.tuna.yaml
