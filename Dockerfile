@@ -13,9 +13,6 @@ RUN set -ex \
 
 RUN set -ex \
   ; mkdir -p ${STACK_ROOT} && mkdir -p ${HOME}/.cabal \
-  # ; wget -q https://github.com/commercialhaskell/stack/releases/download/v2.3.1/stack-2.3.1-linux-x86_64-bin \
-  #     -O /usr/local/bin/stack \
-  # ; chmod +x /usr/local/bin/stack \
   ; curl -sSL https://get.haskellstack.org/ | sh \
   ; stack config set system-ghc --global false && stack config set install-ghc --global true  \
   ; stack update && stack setup \
