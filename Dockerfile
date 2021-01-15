@@ -48,7 +48,8 @@ RUN set -ex \
   ; rm -rf ${STACK_ROOT}/programs/x86_64-linux/*.tar.xz \
   ; rm -rf ${STACK_ROOT}/pantry/hackage/* \
   ; stack install flow \
-  ; stack new hello rio && rm -rf hello
+  ; stack new hello rio && rm -rf hello \
+  ; stack new hello && rm -rf hello
 
 RUN set -ex \
   ; mkdir -p /opt/language-server/haskell \
