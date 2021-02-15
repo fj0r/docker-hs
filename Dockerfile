@@ -6,8 +6,8 @@ ENV PATH=${HOME}/.local/bin:$PATH
 RUN set -ex \
   ; apt-get update \
   ; apt-get install -y --no-install-recommends \
-        libffi-dev libgmp-dev zlib1g-dev \
-        libtinfo-dev libblas-dev liblapack-dev \
+        libicu-dev libffi-dev libgmp-dev zlib1g-dev \
+        libncurses-dev libtinfo-dev libblas-dev liblapack-dev \
   ; apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 RUN set -ex \
