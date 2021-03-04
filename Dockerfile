@@ -45,21 +45,18 @@ RUN set -ex \
   #; sed -i "s/^\(resolver:\).*$/\1 ${STACKAGE_VERSION}/g" ${STACK_ROOT}/global-project/stack.yaml \
   ; rm -rf ${STACK_ROOT}/programs/x86_64-linux/*.tar.xz \
   ; rm -rf ${STACK_ROOT}/pantry/hackage/* \
+  ; stack install flow \
+  ; stack new hello rio && rm -rf hello \
+  ; stack new hello && rm -rf hello \
   ; yq e --inplace ".allow-different-user=true" ${STACK_ROOT}/config.yaml \
   ; for x in config.yaml \
              templates \
              stack.sqlite3.pantry-write-lock \
              pantry/pantry.sqlite3.pantry-write-lock \
              snapshots/x86_64-linux-tinfo6 \
-             global-project/stack.yaml \
-             global-project/stack.yaml.lock \
-             global-project/.stack-work/ \
-             global-project/.stack-work/stack.sqlite3.pantry-write-lock \
   ; do chmod 777 ${STACK_ROOT}/$x; done \
-  ; mv /root/.local/bin/* /usr/local/bin \
-  ; stack install flow \
-  ; stack new hello rio && rm -rf hello \
-  ; stack new hello && rm -rf hello
+  ; chmod -R 777 ${STACK_ROOT}/global-project \
+  ; mv /root/.local/bin/* /usr/local/bin
 
 RUN set -ex \
   ; mkdir -p /opt/language-server/haskell \
