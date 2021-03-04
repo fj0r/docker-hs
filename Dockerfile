@@ -1,7 +1,6 @@
 FROM nnurphy/ub
 
 ENV STACK_ROOT=/opt/stack
-ENV PATH=/root/.local/bin:$PATH
 
 RUN set -ex \
   ; apt-get update \
@@ -45,6 +44,15 @@ RUN set -ex \
   #; sed -i "s/^\(resolver:\).*$/\1 ${STACKAGE_VERSION}/g" ${STACK_ROOT}/global-project/stack.yaml \
   ; rm -rf ${STACK_ROOT}/programs/x86_64-linux/*.tar.xz \
   ; rm -rf ${STACK_ROOT}/pantry/hackage/* \
+  ; for x in config.yaml \
+             stack.sqlite3.pantry-write-lock \
+             pantry/pantry.sqlite3.pantry-write-lock \
+             global-project/stack.yaml \
+             global-project/stack.yaml.lock \
+             global-project/.stack-work/ \
+             global-project/.stack-work/stack.sqlite3.pantry-write-lock \
+  ; do chmod 777 ${STACK_ROOT}/$x; done \
+  ; mv /root/.local/bin/* /usr/local/bin \
   ; stack install flow \
   ; stack new hello rio && rm -rf hello \
   ; stack new hello && rm -rf hello
