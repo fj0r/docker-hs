@@ -58,5 +58,5 @@ RUN set -ex \
   ; chmod +x /opt/language-server/haskell/* \
   ; for l in /opt/language-server/haskell/*; do ln -fs $l /usr/local/bin; done
 
-COPY .ghci $HOME
+COPY .ghci /root/
 COPY config.tuna.yaml /opt/stack/config.tuna.yaml
