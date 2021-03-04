@@ -1,7 +1,7 @@
 FROM nnurphy/ub
 
 ENV STACK_ROOT=/opt/stack
-ENV PATH=${HOME}/.local/bin:$PATH
+ENV PATH=/root/.local/bin:$PATH
 
 RUN set -ex \
   ; apt-get update \
