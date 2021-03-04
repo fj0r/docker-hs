@@ -45,8 +45,10 @@ RUN set -ex \
   ; rm -rf ${STACK_ROOT}/programs/x86_64-linux/*.tar.xz \
   ; rm -rf ${STACK_ROOT}/pantry/hackage/* \
   ; for x in config.yaml \
+             templates \
              stack.sqlite3.pantry-write-lock \
              pantry/pantry.sqlite3.pantry-write-lock \
+             snapshots/x86_64-linux-tinfo6 \
              global-project/stack.yaml \
              global-project/stack.yaml.lock \
              global-project/.stack-work/ \
@@ -66,5 +68,5 @@ RUN set -ex \
   ; chmod +x /opt/language-server/haskell/* \
   ; for l in /opt/language-server/haskell/*; do ln -fs $l /usr/local/bin; done
 
-COPY .ghci /root/
-COPY config.tuna.yaml /opt/stack/config.tuna.yaml
+COPY ghci /root/.ghci
+COPY config.tuna.yaml ${STACK_ROOT}/config.tuna.yaml
