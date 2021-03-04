@@ -12,7 +12,8 @@ RUN set -ex \
 RUN set -ex \
   ; mkdir -p ${STACK_ROOT} && mkdir -p ${HOME}/.cabal \
   ; wget -qO- https://get.haskellstack.org/ | sh \
-  ; stack config set system-ghc --global false && stack config set install-ghc --global true  \
+  ; stack config set system-ghc --global false \
+  ; stack config set install-ghc --global true \
   ; stack update && stack setup \
   # JuicyPixels xhtml criterion weigh alex happy
   # cassava diagrams \
@@ -44,6 +45,7 @@ RUN set -ex \
   #; sed -i "s/^\(resolver:\).*$/\1 ${STACKAGE_VERSION}/g" ${STACK_ROOT}/global-project/stack.yaml \
   ; rm -rf ${STACK_ROOT}/programs/x86_64-linux/*.tar.xz \
   ; rm -rf ${STACK_ROOT}/pantry/hackage/* \
+  ; yq e --inplace ".allow-different-user=true" ${STACK_ROOT}/config.yaml \
   ; for x in config.yaml \
              templates \
              stack.sqlite3.pantry-write-lock \
