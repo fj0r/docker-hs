@@ -55,8 +55,7 @@ RUN set -ex \
              pantry/pantry.sqlite3.pantry-write-lock \
              snapshots/x86_64-linux-tinfo6 \
   ; do chmod 777 ${STACK_ROOT}/$x; done \
-  ; chmod -R 777 ${STACK_ROOT}/global-project \
-  ; mv /root/.local/bin/* /usr/local/bin
+  ; chmod -R 777 ${STACK_ROOT}/global-project
 
 RUN set -ex \
   ; mkdir -p /opt/language-server/haskell \
