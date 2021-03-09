@@ -1,4 +1,4 @@
-FROM nnurphy/sid
+FROM nnurphy/io
 
 ENV STACK_ROOT=/opt/stack
 
