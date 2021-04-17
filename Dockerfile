@@ -1,4 +1,4 @@
-FROM nnurphy/io
+FROM nashv1/io
 
 ENV STACK_ROOT=/opt/stack
 
