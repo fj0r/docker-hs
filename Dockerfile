@@ -67,4 +67,4 @@ RUN set -ex \
   ; for l in /opt/language-server/haskell/*; do ln -fs $l /usr/local/bin; done
 
 COPY ghci /root/.ghci
-COPY config.tuna.yaml ${STACK_ROOT}/config.tuna.yaml
+COPY config.ustc.yaml ${STACK_ROOT}/config.ustc.yaml
