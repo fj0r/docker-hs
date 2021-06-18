@@ -2,14 +2,14 @@ FROM fj0rd/io
 
 ENV STACK_ROOT=/opt/stack
 
-RUN set -ex \
+RUN set -eux \
   ; apt-get update \
   ; apt-get install -y --no-install-recommends \
         libicu-dev libffi-dev libgmp-dev zlib1g-dev \
         libncurses-dev libtinfo-dev libblas-dev liblapack-dev \
   ; apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-RUN set -ex \
+RUN set -eux \
   ; mkdir -p ${STACK_ROOT} && mkdir -p ${HOME}/.cabal \
   ; curl -sSL https://get.haskellstack.org/ | sh \
   ; stack config set system-ghc --global false \
@@ -57,7 +57,7 @@ RUN set -ex \
   ; do chmod 777 ${STACK_ROOT}/$x; done \
   ; chmod -R 777 ${STACK_ROOT}/global-project
 
-RUN set -ex \
+RUN set -eux \
   ; mkdir -p /opt/language-server/haskell \
   ; hls_version=$(curl -sSL -H "Accept: application/vnd.github.v3+json"  https://api.github.com/repos/haskell/haskell-language-server/releases | jq -r '.[0].tag_name') \
   ; ghc_version=$(stack ghc -- --version | grep -oP 'version \K([0-9\.]+)') \
