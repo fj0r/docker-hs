@@ -1,4 +1,5 @@
-FROM fj0rd/io
+ARG REPO=fj0rd
+FROM ${REPO}/io
 
 ENV STACK_ROOT=/opt/stack
 
